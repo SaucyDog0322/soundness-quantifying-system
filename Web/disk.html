@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>監視画面</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/final.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+  <script type="text/javascript" src="js/csvread.js"></script>
+  <script type="text/javascript" src="js/traffic/traffic.js"></script>
+  <script type="text/javascript" src="js/traffic/BitReceive.js"></script>
+  <script type="text/javascript" src="js/traffic/BitSend.js"></script>
+</head>
+<body> 
+  <h1>ネットワーク健全性</h1>
+  <select class="form-select" style="width:10rem;" onChange="location.href=value;">
+    <option value="">監視項目</option>
+    <option value="home.html">ホーム</option>
+    <option value="traffic.html">通信量</option>
+    <option value="cpu.html">CPU負荷</option>
+    <option value="disk.html">ディスク負荷</option>
+  </select>
+  <p>ディスク負荷</p>
+  <div align="center">
+    <div class="overlap">
+      <canvas id="data_traffic" width="350" height="350"></canvas>
+      <div class="sample" >
+        <div id="showPointTo"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 通信量(receive)-->
+  <div class="top">
+  <div class="card" style="width: 50rem;"> 
+    <div class="card-header">
+    受信ビット
+    </div>
+    <div class="card-body">
+      <ul>
+      <div>
+        <p class="str_left">latest</p>
+        <div class="overlap"> 
+          <canvas id="BitRec" width="350" height="350"></canvas>
+          <div class="percent">
+            <div id="BitRecPoint" ></div>
+          </div>
+        </div>   
+      </div>
+      <div>
+        <p class="str_right">ave(30m)</p>   
+        <div class="overlap"> 
+          <canvas id="BitRec30" width="350" height="350"></canvas>
+          <div class="percent">
+            <div id="BitRec30Point"></div>
+          </div> 
+        </div> 
+      </div>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <!-- 通信量(send)-->
+  <div class="top">
+  <div class="card" style="width: 50rem;">
+    <div class="card-header">
+    送信ビット
+    </div>
+    <div class="card-body">
+      <ul>
+      <div>
+        <p class="str_left">latest</p>
+          <div class="overlap">
+            <canvas id="BitSen" width="350" height="350"></canvas>
+            <div class="percent">
+              <div id="BitSenPoint"></div> 
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="str_right">ave(30m)</p>   
+          <div class="overlap">
+            <canvas id="BitSen30" width="350" height="350"></canvas>
+            <div class="percent">
+              <div id="BitSen30Point"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </ul>
+    </div>
+  </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  margin: 30px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+ul {
+  display: flex;
+} 
+ .str_left {
+  text-align:left;
+  position:relative;
+  left:150px;
+}
+ .str_right{
+  text-align:right;
+  position:relative;
+  right:125px;
+}
+
+ .card-header{
+  background-color: #808080; 
+}
+ #trafficPointTo{
+  font-size:300%; 
+  text-align:left;
+  position:relative;
+  left:115px;
+}
+ #CPUPointTo{
+  font-size:300%; 
+  text-align:left;
+  position:relative;
+  left:115px;
+}
+.overlap{
+  position:relative;
+}
+
+.percent {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+}
+.top{
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:50px;
+  text-align:center;
+}
+.sample{
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top:54%;
+  left:50%;
+}
+
+

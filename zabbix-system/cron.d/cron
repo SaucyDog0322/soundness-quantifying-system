@@ -1,0 +1,12 @@
+SHELL = /bin/sh
+PATH = /usr/local/sbin/:/usr/local/bin:/sbin:/bin/usr/sbin:/usr/bin
+
+# m h dom mon dow user command 
+* * * * * root sh ~/item/BitReceive.sh => ~/data/BitReceive.csv
+* * * * * root sh ~/item/BitSend.sh => ~/data/BitSend.csv
+* * * * * root sh ~/item/CPUutil.sh => ~/data/CPUutil.csv
+* * * * * root sh ~/item/CPUusrtime.sh => ~/data/CPUusrtime.csv
+* * * * * root sh ~/trans/traBitReceive.sh
+* * * * * root sh ~/trans/traBitSend.sh
+* * * * * root sh ~/trans/traCPUutil.sh
+* * * * * root sh ~/trans/traCPUusrtime.sh
